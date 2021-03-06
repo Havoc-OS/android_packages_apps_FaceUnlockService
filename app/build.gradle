@@ -11,7 +11,7 @@ android {
     buildToolsVersion "30.0.1"
 
     defaultConfig {
-        applicationId "org.pixelexperience.faceunlock"
+        applicationId "com.android.faceunlock"
         minSdkVersion 30
         targetSdkVersion 30
         versionCode 1

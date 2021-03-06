@@ -43,7 +43,7 @@
             android:textColor="?android:textColorSecondary"
             android:textSize="@dimen/setup_body_text_size" />
 
-        <org.pixelexperience.faceunlock.util.CircleSurfaceView
+        <com.android.faceunlock.util.CircleSurfaceView
             android:id="@+id/camera_surface"
             android:layout_width="240.0dip"
             android:layout_height="320.0dip"

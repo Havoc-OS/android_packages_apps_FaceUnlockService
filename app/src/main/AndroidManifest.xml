@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="org.pixelexperience.faceunlock">
+    package="com.android.faceunlock">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"
@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.USE_BIOMETRIC_INTERNAL" />
 
     <application
-        android:name="org.pixelexperience.faceunlock.FaceApplication"
+        android:name="com.android.faceunlock.FaceApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher_face_unlock"
         android:label="@string/app_name"
@@ -21,7 +21,7 @@
         android:persistent="true"
         android:allowClearUserData="false">
         <activity
-            android:name="org.pixelexperience.faceunlock.SetupFaceIntroActivity"
+            android:name="com.android.faceunlock.SetupFaceIntroActivity"
             android:enabled="true"
             android:excludeFromRecents="true"
             android:exported="true"
@@ -29,44 +29,44 @@
             android:screenOrientation="portrait"
             android:theme="@style/SettingsTheme" />
         <activity
-            android:name="org.pixelexperience.faceunlock.FaceEnrollActivity"
+            android:name="com.android.faceunlock.FaceEnrollActivity"
             android:excludeFromRecents="true"
             android:launchMode="standard"
             android:screenOrientation="portrait"
             android:theme="@style/SettingsTheme" />
         <activity
-            android:name="org.pixelexperience.faceunlock.FaceFinish"
+            android:name="com.android.faceunlock.FaceFinish"
             android:excludeFromRecents="true"
             android:label="@string/facelock_setup_notification_text"
             android:launchMode="standard"
             android:screenOrientation="portrait"
             android:theme="@style/SettingsTheme" />
         <activity
-            android:name="org.pixelexperience.faceunlock.FaceTryAgain"
+            android:name="com.android.faceunlock.FaceTryAgain"
             android:excludeFromRecents="true"
             android:launchMode="standard"
             android:screenOrientation="portrait"
             android:theme="@style/SettingsTheme" />
         <activity
-            android:name="org.pixelexperience.faceunlock.FaceValuePropActivity"
+            android:name="com.android.faceunlock.FaceValuePropActivity"
             android:excludeFromRecents="true"
             android:launchMode="standard"
             android:screenOrientation="portrait"
             android:theme="@style/SettingsTheme" />
         <activity
-            android:name="org.pixelexperience.faceunlock.FaceUpgradeFinish"
+            android:name="com.android.faceunlock.FaceUpgradeFinish"
             android:excludeFromRecents="true"
             android:launchMode="standard"
             android:screenOrientation="portrait"
             android:theme="@style/SettingsTheme" />
 
         <service
-            android:name="org.pixelexperience.faceunlock.service.FaceAuthService"
+            android:name="com.android.faceunlock.service.FaceAuthService"
             android:exported="true"
             android:label="@string/app_name"
             android:permission="android.permission.MANAGE_BIOMETRIC">
             <intent-filter>
-                <action android:name="org.pixelexperience.faceunlock.BIND" />
+                <action android:name="com.android.faceunlock.BIND" />
             </intent-filter>
         </service>
     </application>
