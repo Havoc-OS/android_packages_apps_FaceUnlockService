@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
@@ -10,54 +11,166 @@
         android:layout_height="0.0dip"
         android:layout_weight="1.0">
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:paddingStart="@dimen/page_padding_left"
-            android:paddingEnd="@dimen/page_padding_right">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingStart="@dimen/page_padding_left"
+                android:paddingEnd="@dimen/page_padding_right">
+
+                <ImageView
+                    android:id="@+id/iv_top_icon"
+                    android:layout_width="@dimen/setup_top_icon_size"
+                    android:layout_height="@dimen/setup_top_icon_size"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/top_icon_margin_top"
+                    android:src="@drawable/ic_face_auth"
+                    app:tint="@color/theme_color" />
+
+                <TextView
+                    android:id="@+id/tv_header_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_top_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/setup_header_margin_top"
+                    android:fontFamily="@*android:string/config_headlineFontFamily"
+                    android:text="@string/face_value_prop_title"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="@dimen/setup_header_text_size" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_header_2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/setup_summary_margin_top"
+                    android:gravity="center"
+                    android:text="@string/face_value_prop_summary"
+                    android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+                    android:textColor="?android:textColorPrimary" />
+            </RelativeLayout>
 
             <FrameLayout
                 android:id="@+id/fl_anime"
                 android:layout_width="fill_parent"
-                android:layout_height="@dimen/help_video_height"
-                android:layout_below="@id/iv_top_icon">
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="12dp">
 
                 <TextureView
                     android:id="@+id/video"
-                    android:layout_width="@dimen/help_video_width"
-                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="240dp"
                     android:layout_gravity="center_horizontal" />
             </FrameLayout>
 
-            <TextView
-                android:id="@+id/tv_header_2"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/fl_anime"
-                android:layout_marginTop="@dimen/setup_header_margin_top"
-                android:fontFamily="sans-serif"
-                android:text="@string/facelock_setup_notification_title"
-                android:textColor="?android:textColorPrimary"
-                android:textSize="@dimen/setup_header_text_size" />
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|bottom"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:paddingStart="@dimen/page_padding_left"
+                android:paddingEnd="@dimen/page_padding_right">
 
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_header_2"
-                android:layout_marginTop="@dimen/setup_summary_margin_top"
-                android:text="@string/face_value_prop_summary"
-                android:textAppearance="@android:style/TextAppearance.Material.Subhead"
-                android:textColor="?android:textColorSecondary" />
-        </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_info_outline_24dp">
+                    </ImageView>
+                    <Space
+                        android:layout_width="24dp"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/face_enroll_introduction_footer_part_0"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="24dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_face_enroll_introduction_shield">
+                    </ImageView>
+                    <Space
+                        android:layout_width="24dp"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/face_enroll_introduction_footer_part_1"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="24dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_face_enroll_introduction_visibility">
+                    </ImageView>
+                    <Space
+                        android:layout_width="24dp"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/face_enroll_introduction_footer_part_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/face_enroll_introduction_footer_part_2"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="24dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_face_enroll_introduction_people">
+                    </ImageView>
+                    <Space
+                        android:layout_width="24dp"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/face_enroll_introduction_footer_part_3"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
     </ScrollView>
+
+    <include layout="@layout/horizontal_divider" />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="@dimen/page_padding_left_20"
-        android:paddingTop="5.0dip"
-        android:paddingEnd="@dimen/page_padding_right"
-        android:paddingBottom="20.0dip">
+        android:paddingStart="4.0dip"
+        android:paddingTop="12.0dip"
+        android:paddingEnd="20.0dip"
+        android:paddingBottom="12.0dip">
 
         <LinearLayout
             android:layout_width="0.0dip"
@@ -66,10 +179,10 @@
 
             <Button
                 android:id="@+id/vp_cancel"
-                style="@style/SuwGlifButton.Secondary"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/face_value_prop_cancel" />
+                android:text="@string/btn_cancel" />
         </LinearLayout>
 
         <LinearLayout
@@ -80,10 +193,10 @@
 
             <Button
                 android:id="@+id/vp_next"
-                style="@style/SuwGlifButton.Primary"
+                style="@android:style/Widget.DeviceDefault.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/face_value_prop_next" />
+                android:text="@string/btn_next" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

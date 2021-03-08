@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Switch;
 
 import com.android.faceunlock.util.Settings;
 import com.android.faceunlock.util.Util;
@@ -27,9 +26,6 @@ public class FaceFinish extends Activity {
         });
         Button buttonNext = findViewById(R.id.btn_next);
         buttonNext.setOnClickListener(view -> startFaceUpgrageFinishActivity());
-        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch bypassLockscreenSwitch = findViewById(R.id.bypassLockscreenSwitch);
-        bypassLockscreenSwitch.setChecked(Settings.isByPassLockScreenEnabled(this));
-        bypassLockscreenSwitch.setOnCheckedChangeListener((compoundButton, enabled) -> Settings.setByPassLockScreenEnabled(FaceFinish.this, enabled));
     }
 
     @Override

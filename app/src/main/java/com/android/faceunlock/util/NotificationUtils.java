@@ -71,8 +71,8 @@ public class NotificationUtils {
         intent.addFlags(268435456);
         notificationManager.notify(1, new Notification.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_face_auth)
-                .setContentTitle(context.getString(R.string.facelock_setup_notification_title))
-                .setContentText(context.getString(R.string.facelock_setup_notification_text))
+                .setContentTitle(context.getString(R.string.face_value_prop_title))
+                .setContentText(context.getString(R.string.face_value_prop_summary))
                 .setAutoCancel(true)
                 .setChannelId(CHANNEL_ID)
                 .setContentIntent(PendingIntent.getActivity(context, 0, intent, 268435456)).build());

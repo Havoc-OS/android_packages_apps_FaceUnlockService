@@ -14,10 +14,13 @@ import androidx.core.content.ContextCompat;
 
 import com.android.faceunlock.util.NotificationUtils;
 import com.android.faceunlock.util.Util;
+import com.android.faceunlock.widget.VideoListener;
 
 public class SetupFaceIntroActivity extends FaceBaseActivity {
     public static final String EXTRA_ENROLL_SUCCESS = "extra_enroll_success";
     private static final String TAG = SetupFaceIntroActivity.class.getSimpleName();
+
+    private VideoListener mVideoListener;
 
     public static boolean hasAllPermissionsGranted(int[] iArr) {
         for (int i : iArr) {
@@ -76,6 +79,10 @@ public class SetupFaceIntroActivity extends FaceBaseActivity {
             SetupFaceIntroActivity.this.setResult(0);
             SetupFaceIntroActivity.this.finish();
         });
+        mVideoListener = new VideoListener(this,
+                findViewById(R.id.video),
+                R.raw.face_education,
+                true);
     }
 
     @Override
@@ -151,6 +158,22 @@ public class SetupFaceIntroActivity extends FaceBaseActivity {
             showPermissionRequiredDialog();
         } else {
             finish();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mVideoListener != null) {
+            mVideoListener.startVideo();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (mVideoListener != null) {
+            mVideoListener.stopVideo();
         }
     }
 }

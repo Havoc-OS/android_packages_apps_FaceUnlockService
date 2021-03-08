@@ -250,7 +250,7 @@ public class FaceEnrollActivity extends FaceBaseActivity {
         mFaceManager.enroll(Util.getUserId(this), mToken, mEnrollmentCancel, mEnrollmentCallback, new int[]{1});
         mCameraEnrollService.start(mCameraCallback, 15000);
         mFaceEnrollMsg = findViewById(R.id.face_msg);
-        findViewById(R.id.enroll_done).setOnClickListener(view -> {
+        findViewById(R.id.enroll_cancel).setOnClickListener(view -> {
             setResult(-1);
             finish();
         });

@@ -34,7 +34,7 @@
                 android:layout_below="@id/iv_top_icon"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/setup_header_margin_top"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@*android:string/config_headlineFontFamily"
                 android:text="@string/face_try_content"
                 android:textColor="?android:textColorPrimary"
                 android:textSize="@dimen/setup_header_text_size" />
@@ -45,9 +45,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_header"
                 android:layout_marginTop="@dimen/setup_summary_margin_top"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@*android:string/config_bodyFontFamily"
+                android:gravity="center"
                 android:text="@string/face_try_content_tip"
-                android:textColor="?android:textColorSecondary"
+                android:textColor="?android:textColorPrimary"
                 android:textSize="@dimen/setup_body_text_size" />
         </RelativeLayout>
     </ScrollView>
@@ -55,14 +56,14 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="@dimen/page_padding_left"
-        android:paddingTop="5.0dip"
-        android:paddingEnd="@dimen/page_padding_right"
-        android:paddingBottom="20.0dip">
+        android:paddingStart="4.0dip"
+        android:paddingTop="12.0dip"
+        android:paddingEnd="20.0dip"
+        android:paddingBottom="12.0dip">
 
         <Button
             android:id="@+id/face_cancel"
-            style="@style/SuwGlifButton.Secondary"
+            style="@android:style/Widget.DeviceDefault.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@android:string/cancel" />
@@ -74,7 +75,7 @@
 
             <Button
                 android:id="@+id/face_try"
-                style="@style/SuwGlifButton.Primary"
+                style="@android:style/Widget.DeviceDefault.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_try" />

@@ -23,7 +23,7 @@ public class FaceValuePropActivity extends Activity implements View.OnClickListe
         btnNext.setOnClickListener(this);
         mVideoListener = new VideoListener(this,
                 findViewById(R.id.video),
-                Util.isNightModeEnabled(this) ? R.raw.video_value_prop_dark : R.raw.video_value_prop,
+                R.raw.face_settings,
                 true);
     }
 

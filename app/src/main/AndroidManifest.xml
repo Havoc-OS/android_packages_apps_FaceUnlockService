@@ -25,7 +25,6 @@
             android:enabled="true"
             android:excludeFromRecents="true"
             android:exported="true"
-            android:label="@string/title_activity_face_intro"
             android:screenOrientation="portrait"
             android:theme="@style/SettingsTheme" />
         <activity
@@ -37,7 +36,6 @@
         <activity
             android:name="com.android.faceunlock.FaceFinish"
             android:excludeFromRecents="true"
-            android:label="@string/facelock_setup_notification_text"
             android:launchMode="standard"
             android:screenOrientation="portrait"
             android:theme="@style/SettingsTheme" />
