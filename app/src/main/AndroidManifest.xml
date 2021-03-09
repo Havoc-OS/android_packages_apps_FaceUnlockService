@@ -51,12 +51,6 @@
             android:launchMode="standard"
             android:screenOrientation="portrait"
             android:theme="@style/SettingsTheme" />
-        <activity
-            android:name="com.android.faceunlock.FaceUpgradeFinish"
-            android:excludeFromRecents="true"
-            android:launchMode="standard"
-            android:screenOrientation="portrait"
-            android:theme="@style/SettingsTheme" />
 
         <service
             android:name="com.android.faceunlock.service.FaceAuthService"

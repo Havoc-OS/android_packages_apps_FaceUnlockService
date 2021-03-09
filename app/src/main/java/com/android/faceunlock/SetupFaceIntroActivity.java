@@ -47,7 +47,7 @@ public class SetupFaceIntroActivity extends FaceBaseActivity {
     private void showFinishActivity() {
         setResult(1, null);
         Intent intent = new Intent();
-        intent.setClass(this, FaceUpgradeFinish.class);
+        intent.setClass(this, FaceFinish.class);
         startActivityForResult(intent, 1);
     }
 

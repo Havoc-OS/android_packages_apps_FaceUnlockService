@@ -24,8 +24,6 @@ public class FaceFinish extends Activity {
             setResult(enrollSuccess ? -1 : 0, null);
             finish();
         });
-        Button buttonNext = findViewById(R.id.btn_next);
-        buttonNext.setOnClickListener(view -> startFaceUpgrageFinishActivity());
     }
 
     @Override
@@ -45,9 +43,5 @@ public class FaceFinish extends Activity {
     public void onBackPressed() {
         setResult(-1);
         finish();
-    }
-
-    private void startFaceUpgrageFinishActivity() {
-        startActivityForResult(new Intent(this, FaceUpgradeFinish.class), 1);
     }
 }
