@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="theme_color">@*android:color/accent_device_default</color>
-    <color name="primary_color">@*android:color/white</color>
+    <color name="primary_color">@android:color/white</color>
     <color name="enroll_progress_bar">#ffcdd4d8</color>
 </resources>
