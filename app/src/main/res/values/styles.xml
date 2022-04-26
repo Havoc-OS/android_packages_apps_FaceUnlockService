@@ -16,9 +16,11 @@
 
     <style name="SettingsTheme" parent="@android:style/Theme.DeviceDefault.Settings">
         <item name="android:windowNoTitle">true</item>
-        <item name="android:colorPrimary">?android:attr/colorPrimary</item>
-        <item name="android:windowLightStatusBar">@bool/theme_is_light</item>
-        <item name="android:windowLightNavigationBar">@bool/theme_is_light</item>
+        <item name="android:colorPrimary">@color/theme_color</item>
+        <item name="android:colorPrimaryDark">@color/theme_color</item>
+        <item name="android:colorSecondary">@color/theme_color</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">?android:attr/colorBackground</item>
     </style>
 
     <style name="SuwGlifButton.Primary" parent="@android:style/Widget.Material.Button.Colored">

@@ -25,7 +25,7 @@ android_app {
     required: [
         "privapp-permissions-com.android.faceunlock",
         "hiddenapi-whitelist-com.android.faceunlock",
-        "faceunlock_dependencies",
+        "faceunlock_vendor_dependencies",
     ],
 }
 

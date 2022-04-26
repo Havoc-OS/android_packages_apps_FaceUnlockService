@@ -1,5 +1,20 @@
 package com.android.faceunlock;
 
+import static com.android.faceunlock.vendor.constants.FaceConstants.MG_UNLOCK_DARKLIGHT;
+import static com.android.faceunlock.vendor.constants.FaceConstants.MG_UNLOCK_FACE_BLUR;
+import static com.android.faceunlock.vendor.constants.FaceConstants.MG_UNLOCK_FACE_MULTI;
+import static com.android.faceunlock.vendor.constants.FaceConstants.MG_UNLOCK_FACE_NOT_COMPLETE;
+import static com.android.faceunlock.vendor.constants.FaceConstants.MG_UNLOCK_FACE_OFFSET_LEFT;
+import static com.android.faceunlock.vendor.constants.FaceConstants.MG_UNLOCK_FACE_OFFSET_RIGHT;
+import static com.android.faceunlock.vendor.constants.FaceConstants.MG_UNLOCK_FACE_ROTATED_LEFT;
+import static com.android.faceunlock.vendor.constants.FaceConstants.MG_UNLOCK_FACE_ROTATED_RIGHT;
+import static com.android.faceunlock.vendor.constants.FaceConstants.MG_UNLOCK_FACE_SCALE_TOO_LARGE;
+import static com.android.faceunlock.vendor.constants.FaceConstants.MG_UNLOCK_FACE_SCALE_TOO_SMALL;
+import static com.android.faceunlock.vendor.constants.FaceConstants.MG_UNLOCK_FAILED;
+import static com.android.faceunlock.vendor.constants.FaceConstants.MG_UNLOCK_HALF_SHADOW;
+import static com.android.faceunlock.vendor.constants.FaceConstants.MG_UNLOCK_HIGHLIGHT;
+import static com.android.faceunlock.vendor.constants.FaceConstants.MG_UNLOCK_KEEP;
+
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -22,21 +37,6 @@ import com.android.faceunlock.util.CircleSurfaceView;
 import com.android.faceunlock.util.Settings;
 import com.android.faceunlock.util.SharedUtil;
 import com.android.faceunlock.util.Util;
-
-import static com.android.faceunlock.FaceConstants.MG_UNLOCK_DARKLIGHT;
-import static com.android.faceunlock.FaceConstants.MG_UNLOCK_FACE_BLUR;
-import static com.android.faceunlock.FaceConstants.MG_UNLOCK_FACE_MULTI;
-import static com.android.faceunlock.FaceConstants.MG_UNLOCK_FACE_NOT_COMPLETE;
-import static com.android.faceunlock.FaceConstants.MG_UNLOCK_FACE_OFFSET_LEFT;
-import static com.android.faceunlock.FaceConstants.MG_UNLOCK_FACE_OFFSET_RIGHT;
-import static com.android.faceunlock.FaceConstants.MG_UNLOCK_FACE_ROTATED_LEFT;
-import static com.android.faceunlock.FaceConstants.MG_UNLOCK_FACE_ROTATED_RIGHT;
-import static com.android.faceunlock.FaceConstants.MG_UNLOCK_FACE_SCALE_TOO_LARGE;
-import static com.android.faceunlock.FaceConstants.MG_UNLOCK_FACE_SCALE_TOO_SMALL;
-import static com.android.faceunlock.FaceConstants.MG_UNLOCK_FAILED;
-import static com.android.faceunlock.FaceConstants.MG_UNLOCK_HALF_SHADOW;
-import static com.android.faceunlock.FaceConstants.MG_UNLOCK_HIGHLIGHT;
-import static com.android.faceunlock.FaceConstants.MG_UNLOCK_KEEP;
 
 public class FaceEnrollActivity extends FaceBaseActivity {
     private static final String TAG = FaceEnrollActivity.class.getSimpleName();
@@ -247,7 +247,9 @@ public class FaceEnrollActivity extends FaceBaseActivity {
             mCameraEnrollService = CameraFaceEnrollController.getInstance();
             mCameraEnrollService.setSurfaceHolder(mSurface.getHolder());
         }
-        mFaceManager.enroll(Util.getUserId(this), mToken, mEnrollmentCancel, mEnrollmentCallback, new int[]{1});
+        if (mToken != null && mToken.length > 0) {
+            mFaceManager.enroll(Util.getUserId(this), mToken, mEnrollmentCancel, mEnrollmentCallback, new int[]{1});
+        }
         mCameraEnrollService.start(mCameraCallback, 15000);
         mFaceEnrollMsg = findViewById(R.id.face_msg);
         findViewById(R.id.enroll_cancel).setOnClickListener(view -> {
