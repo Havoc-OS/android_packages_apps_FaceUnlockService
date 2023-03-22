@@ -11,6 +11,7 @@ android_app {
     privileged: true,
     platform_apis: true,
     certificate: "platform",
+    system_ext_specific: true,
 
     optimize: {
         enabled: false,
@@ -34,6 +35,7 @@ prebuilt_etc {
     src: "privapp-permissions-com.android.faceunlock.xml",
     sub_dir: "permissions",
     filename_from_src: true,
+    system_ext_specific: true,
 }
 
 prebuilt_etc {
@@ -41,4 +43,5 @@ prebuilt_etc {
     src: "hiddenapi-whitelist-com.android.faceunlock.xml",
     sub_dir: "sysconfig",
     filename_from_src: true,
+    system_ext_specific: true,
 }
